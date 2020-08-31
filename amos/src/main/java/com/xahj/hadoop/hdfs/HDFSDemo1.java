@@ -62,8 +62,7 @@ public class HDFSDemo1 {
         // 7. 查看文件详情
         FileStatus[] fileStatuses = fs.listStatus(new Path("/"));
         for (FileStatus fileStatus : fileStatuses) {
-            //todo  按照Hadoop UI的格式展示文件
-
+            //TODO  按照Hadoop UI的格式展示文件
         }
         // 8. 类型判断
 

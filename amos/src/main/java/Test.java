@@ -9,9 +9,6 @@
 public class Test {
     public static void main(String[] args) {
         System.out.println("黄河之水天上来");
-
-
-
     }
 }
 

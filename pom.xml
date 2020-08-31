@@ -22,6 +22,7 @@
         <module>pro_yf</module>
         <module>wkj_pro</module>
         <module>ydt_project</module>
+        <module>lrx</module>
     </modules>
 
     <properties>

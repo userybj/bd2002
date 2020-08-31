@@ -23,6 +23,8 @@ public class UploadLogs {
 
         Path[] paths = null;
 
+
+
         File parent = new File("C:\\Users\\Administrator\\Desktop\\tmp\\logs");
         File[] children = parent.listFiles();
         if (children != null) {

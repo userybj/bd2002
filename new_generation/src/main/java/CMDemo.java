@@ -1,7 +1,7 @@
 import java.io.*;
 
 /**
- * 测试关机bat指令
+ * 测试关机指令，请勿轻易尝试
  * @author 15989
  */
 public class CMDemo {
@@ -31,7 +31,5 @@ public class CMDemo {
         } catch (Exception e) {
             System.err.println("失败");
         }
-
-
     }
 }

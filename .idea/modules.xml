@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/amos/amos.iml" filepath="$PROJECT_DIR$/amos/amos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bd2002.iml" filepath="$PROJECT_DIR$/bd2002.iml" />
+    </modules>
+  </component>
+</project>

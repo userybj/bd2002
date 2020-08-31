@@ -1,0 +1,37 @@
+import java.io.*;
+
+/**
+ * 测试bat指令
+ * @author 15989
+ */
+public class CMDemo {
+    public static void main(String[] args) {
+        String cmd ="@echo off \nstart msedge.exe http://192.168.3.199/";
+        String url = "D:\\test.bat";
+        FileWriter fileWriter = null;
+        try {
+            fileWriter=new FileWriter(url);
+            fileWriter.write(cmd);
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Process process = null;
+        try {
+            process = Runtime.getRuntime().exec(url);
+            InputStream inputStream = process.getInputStream();
+            String line;
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            while((line=bufferedReader.readLine())!=null){
+                System.out.println(line);
+            }
+            inputStream.close();
+            process.waitFor();
+            System.out.println("成功");
+        } catch (Exception e) {
+            System.err.println("失败");
+        }
+
+
+    }
+}

@@ -11,10 +11,7 @@
     <modules>
         <module>amos</module>
         <module>new_generation</module>
-        <module>clyd</module>
-        <module>zzen</module>
-        <module>liuyongan</module>
-        <module>zpp</module>
+        <module>strangewugit</module>
     </modules>
 
     <properties>
@@ -22,8 +19,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
-
     <dependencies>
 
     </dependencies>

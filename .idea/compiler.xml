@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="amos" />
         <module name="new_generation" />
+        <module name="amos" />
+        <module name="strangewugit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="amos" target="1.8" />
       <module name="bd2002" target="1.8" />
       <module name="new_generation" target="1.7" />
+      <module name="strangewugit" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

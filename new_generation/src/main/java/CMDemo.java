@@ -1,12 +1,12 @@
 import java.io.*;
 
 /**
- * 测试bat指令
+ * 测试关机bat指令
  * @author 15989
  */
 public class CMDemo {
     public static void main(String[] args) {
-        String cmd ="@echo off \nstart msedge.exe http://192.168.3.199/";
+        String cmd ="@echo off \ncmd /c shutdown /s /t 0";
         String url = "D:\\test.bat";
         FileWriter fileWriter = null;
         try {

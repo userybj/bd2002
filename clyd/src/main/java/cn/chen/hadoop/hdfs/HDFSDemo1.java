@@ -22,6 +22,7 @@ public class HDFSDemo1 {
     private FileSystem fs;
     @Before
     public void init() throws Exception {
+
         // 上传文件
         FileSystem fs = HDFSUtils.connectFs();
     }

@@ -12,6 +12,10 @@
         <module>amos</module>
         <module>new_generation</module>
         <module>strangewugit</module>
+        <module>clyd</module>
+        <module>com.ybj</module>
+        <module>zpp</module>
+        <module>zzen</module>
     </modules>
 
     <properties>

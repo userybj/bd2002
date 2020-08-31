@@ -21,7 +21,8 @@
         <module>One-zxf</module>
         <module>pro_yf</module>
         <module>wkj_pro</module>
-        <module>liuyongan</module>
+        <module>ydt_project</module>
+        <module>lrx</module>
     </modules>
 
     <properties>

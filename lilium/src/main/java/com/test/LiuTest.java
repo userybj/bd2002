@@ -1,4 +1,4 @@
-package com;
+package com.test;
 
 public class LiuTest {
     public static void main(String[] args) {

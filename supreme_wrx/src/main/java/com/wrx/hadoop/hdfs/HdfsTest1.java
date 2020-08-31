@@ -85,6 +85,7 @@ public class HdfsTest1 {
             fileSystem.copyFromLocalFile(
                     new Path("C:\\Users\\19425\\Desktop\\Lemon.txt"),
                     new Path("/"));
+
     }
 
     public static void downloads(FileSystem fileSystem) throws IOException {

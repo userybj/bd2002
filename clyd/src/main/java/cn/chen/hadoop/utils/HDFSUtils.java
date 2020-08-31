@@ -26,6 +26,7 @@ public class HDFSUtils {
     // 创建文件管理对象
     private static FileSystem fs = null;
     private static Configuration conf = new Configuration();
+
     static {
         try {
             prop.load(new FileInputStream("E:\\IdeaProjects\\bd2002\\clyd\\src\\main\\resources\\clyd.properties"));

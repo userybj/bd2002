@@ -23,6 +23,7 @@
         <module>wkj_pro</module>
         <module>ydt_project</module>
         <module>lrx</module>
+        <module>lpb</module>
     </modules>
 
     <properties>

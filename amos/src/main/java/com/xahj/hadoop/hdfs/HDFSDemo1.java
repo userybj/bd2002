@@ -37,7 +37,7 @@ public class HDFSDemo1 {
         // 1. 通过FileSystem创建  HDFS文件系统对象
 
         FileSystem fs = FileSystem.get(
-                URI.create("hdfs://bd0201:9000/"),
+                        URI.create("hdfs://bd0201:9000/"),
                 conf,
                 "root"
         );
@@ -63,8 +63,11 @@ public class HDFSDemo1 {
         FileStatus[] fileStatuses = fs.listStatus(new Path("/"));
         for (FileStatus fileStatus : fileStatuses) {
             //TODO  按照Hadoop UI的格式展示文件
+
+            // 8. 类型判断
+            boolean isFile = fileStatus.isFile();
+            boolean isDirectory = fileStatus.isDirectory();
         }
-        // 8. 类型判断
 
 
     }

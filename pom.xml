@@ -21,6 +21,7 @@
         <module>One-zxf</module>
         <module>pro_yf</module>
         <module>wkj_pro</module>
+        <module>ydt_project</module>
     </modules>
 
     <properties>

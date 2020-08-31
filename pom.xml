@@ -11,6 +11,7 @@
     <modules>
         <module>amos</module>
         <module>new_generation</module>
+        <module>gpcprogram</module>
     </modules>
 
     <properties>

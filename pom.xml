@@ -12,6 +12,9 @@
         <module>amos</module>
         <module>new_generation</module>
         <module>clyd</module>
+        <module>zzen</module>
+        <module>liuyongan</module>
+        <module>zpp</module>
     </modules>
 
     <properties>

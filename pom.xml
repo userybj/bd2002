@@ -16,8 +16,11 @@
         <module>com.ybj</module>
         <module>zpp</module>
         <module>zzen</module>
-        <module>liuyongan</module>
         <module>zhl</module>
+        <module>gpcprogram</module>
+        <module>One-zxf</module>
+        <module>pro_yf</module>
+        <module>wkj_pro</module>
     </modules>
 
     <properties>

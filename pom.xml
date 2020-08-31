@@ -11,7 +11,7 @@
     <modules>
         <module>amos</module>
         <module>new_generation</module>
-        <module>wkj_pro</module>
+        <module>clyd</module>
     </modules>
 
     <properties>

@@ -1,11 +1,10 @@
 /**
  * @author:chenliuyiding
- * @date 2020/8/31 10: 28:
+ * @date 2020/8/31 11: 09:
  * @description
  **/
 public class CLYD {
     public static void main(String[] args) {
-        System.out.println("hello world");
-        System.out.println("eee");
+        System.out.println("我来了");
     }
 }

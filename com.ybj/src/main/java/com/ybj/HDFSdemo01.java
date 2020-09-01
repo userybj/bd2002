@@ -12,7 +12,7 @@ import java.net.URI;
 
 
 public class HDFSdemo01 {
-    public static void main(String[] args) {
+    public static void main(String [] args) {
         try {
             // 1. 通过FileSystem创建  HDFS文件系统对象
             FileSystem fls = FileSystem.get(URI.create("hdfs://192.168.19.66:9000"), new Configuration(), "root");

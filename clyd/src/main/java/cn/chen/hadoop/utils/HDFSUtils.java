@@ -7,8 +7,10 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 
 
+import java.io.File;
 import java.io.FileInputStream;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Properties;
@@ -26,9 +28,10 @@ public class HDFSUtils {
     // 创建文件管理对象
     private static FileSystem fs = null;
     private static Configuration conf = new Configuration();
+
     static {
         try {
-            prop.load(new FileInputStream("E:\\IdeaProjects\\bd2002\\clyd\\src\\main\\resources\\clyd.properties"));
+            prop.load(new FileReader(new File("E:\\IdeaProjects\\bd2002\\clyd\\src\\main\\resources\\clyd.properties")));
         } catch (IOException e) {
             logger.error("加载配置文件异常", e);
         }
@@ -37,11 +40,14 @@ public class HDFSUtils {
     public static FileSystem connectFs() {
         try {
             try {
-                fs = FileSystem.get(
-                        URI.create(prop.getProperty("hdfs.uri")),
-                        conf,
-                        prop.getProperty("hdfs.user")
-                );
+                if (fs == null) {
+                    fs = FileSystem.get(
+                            URI.create(prop.getProperty("hdfs.uri")),
+                            conf,
+                            prop.getProperty("hdfs.user")
+                    );
+                }
+
             } catch (InterruptedException e) {
                 logger.error("文件系统异常", e);
             }

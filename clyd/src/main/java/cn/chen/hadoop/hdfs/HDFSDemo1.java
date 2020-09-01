@@ -49,6 +49,7 @@ public class HDFSDemo1 {
     public void testDownload()throws Exception{
         fs.copyToLocalFile(false,new Path("/wcinput"),new Path("C:\\Users\\l\\Desktop"),false);
     }
+
     @Test
     // 删除文件：hadoop fs -rm -rf xxx
     public void testDelete()throws Exception{

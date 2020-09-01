@@ -22,6 +22,7 @@ import java.util.Properties;
  * Description:
  */
 public class HDFSUtils {
+
     private static InternalLogger logger = Log4JLoggerFactory.getInstance(HDFSUtils.class.getName());
     private static Properties prop = new Properties();
     private static FileSystem fs = null;

@@ -40,10 +40,10 @@ public class HdfsTest1 {
                 "root");
 
         // 3、上传文件：调用上传文件方法
-        //uploads(fileSystem);
+        uploads(fileSystem);
 
         // 4、下载文件：调用下载文件方法
-        //downloads(fileSystem);
+//        downloads(fileSystem);
 
         // 5、创建文件
         //fileSystem.mkdirs(new Path("/goodTime.txt"));
@@ -88,9 +88,10 @@ public class HdfsTest1 {
     }
 
     public static void downloads(FileSystem fileSystem) throws IOException {
-        fileSystem.copyToLocalFile(
+        fileSystem.copyToLocalFile(false,
                 new Path("/Lemon.txt"),
-                new Path("C:\\Users\\19425\\Desktop\\Lemon")
+                new Path("C:\\Users\\19425\\Desktop\\Lemon"),
+                true
         );
     }
 

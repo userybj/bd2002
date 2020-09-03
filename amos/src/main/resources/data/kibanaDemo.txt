@@ -1,0 +1,61 @@
+GET _cat/indices
+
+
+PUT douyin_1
+
+
+POST douyin_1/_doc
+{
+  "name":"1111"
+}
+
+GET douyin_1/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+ 查询部分字段
+
+GET douyin_1/_search
+{
+"_source": ["gender","city"]
+}
+
+# (分页)设置查询结果数量
+GET douyin_1/_search
+{
+"from": 6,
+"size": 5,
+"_source": ["gender","city","feed_desc"]
+}
+
+# match 模糊匹配
+# term 精准匹配
+GET douyin_1/_search
+{
+"query": {
+"match": {
+"create_time": "2019-04-14 07:40:03"
+}
+}
+, "size": 100
+, "_source": "create_time"
+}
+
+
+GET douyin_1/_search
+{
+"query": {
+"term": {
+"FIELD": {
+"create_time": "2019-04-14 07:40:03"
+}
+}
+}
+}
+
+
+
+DELETE douyin_1

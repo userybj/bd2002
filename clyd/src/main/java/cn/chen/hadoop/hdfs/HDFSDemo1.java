@@ -22,13 +22,13 @@ public class HDFSDemo1 {
     private FileSystem fs;
     @Before
     public void init() throws Exception {
-
         // 上传文件
-        FileSystem fs = HDFSUtils.connectFs();
+        fs = HDFSUtils.connectFs();
+
     }
     @After
     public void close() throws IOException {
-      HDFSUtils.close();
+        HDFSUtils.close();
     }
     // hadoop fs(运行一个通用的用户客户端) -mkdir /xxx
     // 创建一个客户端对象,调用创建目录的方法，路径作为方法的参数
@@ -43,11 +43,13 @@ public class HDFSDemo1 {
     public void testUpload()throws Exception{
         fs.copyFromLocalFile(false,true,new Path("E://a.txt"),new Path("/"));
     }
+
     @Test
     // 下载文件：hadoop fs -get
     public void testDownload()throws Exception{
-        fs.copyToLocalFile(false,new Path("/wcinput"),new Path("e://"),false);
+        fs.copyToLocalFile(false,new Path("/wcinput"),new Path("C:\\Users\\l\\Desktop"),false);
     }
+
     @Test
     // 删除文件：hadoop fs -rm -rf xxx
     public void testDelete()throws Exception{

@@ -22,7 +22,6 @@ public class HDFSDemo1 {
         boolean flag;
         // HDFS 的操作
 
-
         // HDFS 的API入口类是FileSystem
         // FileSystem 有多个实现类
         // FileSystem 可以根据URI兼容各种各样不同的文件系统

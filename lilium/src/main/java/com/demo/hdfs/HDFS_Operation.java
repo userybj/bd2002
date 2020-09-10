@@ -1,8 +1,7 @@
 package com.demo.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.*;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -26,14 +25,19 @@ public class HDFS_Operation {
 
     @Test
     public void HDFSTest() throws IOException, InterruptedException {
+        //1.创建配置文件
         Configuration cf = new Configuration();
+        //1.1设置配置文件
         cf.set("dfs.replication","2");
-
-        //UnsatisfiedLinkError
-
+        //2.获取hdfs文件系统对象
         fs = FileSystem.get(
-                URI.create("hdfs://master:9000/"), cf, "root");
-        copyToCluster("F:\\桌面\\kibana-7.5.2-linux-x86_64.tar.gz","/");
+                URI.create("hdfs://192.168.110.10:9000/"), cf, "root");
+        //3.获取文件列表
+        RemoteIterator<LocatedFileStatus> files = fs.listFiles(new Path("/"), true);
+        while(files.hasNext()){
+            System.out.println(files.next().toString());
+        }
+        //copyToCluster("F:\\桌面\\kibana-7.5.2-linux-x86_64.tar.gz","/");
         //copyFromCluster("/hadoop-2.7.7.tar.gz","F:\\桌面\\hadoop");
     }
 

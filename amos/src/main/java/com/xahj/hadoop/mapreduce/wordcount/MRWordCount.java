@@ -27,6 +27,7 @@ public class MRWordCount {
 
         //1. 获取job实例
         Configuration conf = new Configuration();
+//        conf.set("mapreduce.input.fileinputformat.split.minsize","12313123");
         Job job = Job.getInstance(conf);
 
         //2. 设置job运行的主类

@@ -1,4 +1,4 @@
-package com.ybj;
+package com.ybj.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
@@ -9,12 +9,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
+import java.text.SimpleDateFormat;
 
 
 public class HDFSdemo01 {
     public static void main(String [] args) {
+        System.setProperty("hadoop.home.dir","D:\\Soft\\hadoop2.7");
         try {
-            // 1. 通过FileSystem创建  HDFS文件系统对象
+        // 1. 通过FileSystem创建  HDFS文件系统对象
             FileSystem fls = FileSystem.get(URI.create("hdfs://192.168.19.66:9000"), new Configuration(), "root");
         // 2. 上传文件 (覆盖)
             /*fls.copyFromLocalFile(new Path("C:\\Users\\ASUS\\Desktop\\spring.docx"),new Path("/"));
@@ -26,17 +28,24 @@ public class HDFSdemo01 {
         // 5.删除文件
             //fls.delete(new Path("/08-jsp/02-尚硅谷-jsp-jsp的小结.avi"),true);
         // 6.文件名更改
+            //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            //        //转换
+            //        String time = sdf.format(new Date(Long.parseLong(timeStamp)));
             //fls.rename(new Path("/08-jsp"),new Path("/jsp_data"));
         // 7.查看文件详情
             FileStatus[] files = fls.listStatus(new Path("/"));
-            System.out.println("Permission\tOwner\tGroup\tSize\tLast Modified\tReplication\tBlock Size\t\tName");
+            System.out.println("Permission\tOwner\tGroup\tSize\tLast Modified\tReplication\tBlock Size\t\t\tName\t\t\t\t是否是文件夹");
             for(FileStatus fileStatus :files){
-                System.out.println(fileStatus.getPermission()+"\t"+fileStatus.getOwner()+"\t"+fileStatus.getGroup()+"\t"+fileStatus.getLen()+"\t"+fileStatus.getModificationTime()+"\t"+fileStatus.getReplication()+"\t\t\t"+fileStatus.getBlockSize()+"\t"+fileStatus.getPath());
+                System.out.print(fileStatus.getPermission()+"\t"+fileStatus.getOwner()+"\t"+fileStatus.getGroup()+"\t"
+                        +fileStatus.getLen()+"\t"+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(fileStatus.getModificationTime())
+                        +"\t"+fileStatus.getReplication()+"\t\t\t"+fileStatus.getBlockSize()+"\t"+fileStatus.getPath()+"\t\t");
                 // 8.类型判断
-                boolean flag1 = fileStatus.isDirectory();
-                boolean flag2 = fileStatus.isFile();
-                System.out.println("**"+flag1+"**");
-                System.out.println("&&"+flag2+"&&");
+                if(fileStatus.isDirectory()){
+                    System.out.println("是一个文件夹");
+                }
+                if(fileStatus.isFile()){
+                    System.out.println("是一个文件");
+                }
             }
             //hdfs的流操作
             //1. 下载文件
@@ -55,9 +64,7 @@ public class HDFSdemo01 {
             FSDataOutputStream fso = fls.create(new Path("/main/spring.docx"));
             // 2.3 复制流
             IOUtils.copyBytes(fiss,fso,4096,true);*/
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

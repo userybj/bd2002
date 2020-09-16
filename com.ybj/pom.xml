@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>com.ybj</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>com.ybj.scala</module>
+    </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
         <dependency>
@@ -53,6 +57,11 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.11.1</version>
         </dependency>
     </dependencies>
 

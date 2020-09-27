@@ -10,6 +10,7 @@ object TestDemo1 extends App {
   //println(d)
   var d3: Double = math.pow(d, 2)
   var d1: Double = d * d
+  
   var d2: Double = num - d3
   println(d2) //结果:4.440892098500626E-16
 }

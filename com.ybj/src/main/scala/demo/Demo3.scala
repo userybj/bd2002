@@ -24,7 +24,7 @@ object Demo3 {
       println(sqrt(2))
     }
     f3()
-    <====|==
+    <====|==()
     //定义一个长度为5的数组
     val array = new Array[Int](5)
     array(0) = 2
